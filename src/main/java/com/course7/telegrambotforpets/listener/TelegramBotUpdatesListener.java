@@ -43,6 +43,6 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
                 telegramBot.execute(new SendMessage(update.message().chat().id(), "Gav-gav"));
             }
         });
-        return UpdatesListener.CONFIRMED_UPDATES_ALL;
+        return UpdatesListener.CONFIRMED_UPDATES_ALL;//
     }
 }
