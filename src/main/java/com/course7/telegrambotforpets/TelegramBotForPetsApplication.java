@@ -11,5 +11,7 @@ public class TelegramBotForPetsApplication {
     }
 
     public TelegramBotForPetsApplication() {
+
+
     }
 }
