@@ -10,4 +10,6 @@ public class TelegramBotForPetsApplication {
         SpringApplication.run(TelegramBotForPetsApplication.class, args);
     }
 
+    public TelegramBotForPetsApplication() {
+    }
 }
