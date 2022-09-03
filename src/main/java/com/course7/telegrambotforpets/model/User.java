@@ -1,109 +1,44 @@
 package com.course7.telegrambotforpets.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.Date;
-import java.util.Objects;
+import java.time.LocalDateTime;
 
 @Entity
+@Table(name = User.TABLE_NAME)
+@Setter
+@Getter
+@NoArgsConstructor
 public class User {
 
+    public static final String TABLE_NAME = "users";
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long id;
 
-    private Long chatId;
-    private String userName;
-    private Date dateBegin;
-    private Integer extraDay;
-    private Boolean isEnd;
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "id")
-    private Collection<Report> reports;
+    @Column(name = "telegramId")
+    private long telegramId;
 
+    @Column(name = "chat_id")
+    private long chatId;
 
-    public User(Long chatId, String userName, Date dateBegin, Integer extraDay, Boolean isEnd) {
-        this.chatId = chatId;
-        this.userName = userName;
-        this.dateBegin = dateBegin;
-        this.extraDay = extraDay;
-        this.isEnd = isEnd;
-    }
-    public User(){
+    @Column(name = "username")
+    private String username;
 
-    }
+    @Column(name = "first_name")
+    private String firstName;
 
-    public Long getId() {
-        return id;
-    }
+    @Column(name = "last_name")
+    private String lastName;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "is_bot")
+    private boolean isBot;
 
-    public Long getChatId() {
-        return chatId;
-    }
-
-    public void setChatId(Long chatId) {
-        this.chatId = chatId;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public Date getDateBegin() {
-        return dateBegin;
-    }
-
-    public void setDateBegin(Date dateBegin) {
-        this.dateBegin = dateBegin;
-    }
-
-    public Integer getExtraDay() {
-        return extraDay;
-    }
-
-    public void setExtraDay(Integer extraDay) {
-        this.extraDay = extraDay;
-    }
-
-    public Boolean getEnd() {
-        return isEnd;
-    }
-
-    public void setEnd(Boolean end) {
-        isEnd = end;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(chatId, user.chatId) && Objects.equals(userName, user.userName) && Objects.equals(dateBegin, user.dateBegin) && Objects.equals(extraDay, user.extraDay) && Objects.equals(isEnd, user.isEnd);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, chatId, userName, dateBegin, extraDay, isEnd);
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", chatId=" + chatId +
-                ", userName='" + userName + '\'' +
-                ", dateBegin=" + dateBegin +
-                ", extraDay=" + extraDay +
-                ", isEnd=" + isEnd +
-                '}';
-    }
 }
