@@ -13,6 +13,7 @@ public class CommandServiceImpl implements CommandService {
     public SendMessage start(Update update) {
                 String message =  update.message().from().username() + ", Привет!"+ " \n"+"Чем могу помочь?";
 
+
         Keyboard replyKeyboardMarkup = new ReplyKeyboardMarkup(
                 new String[]{"О приюте", "Как взять собаку из приюта"},
                 new String[]{"Прислать отчет о питомце"},
