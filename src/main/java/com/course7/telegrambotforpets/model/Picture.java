@@ -11,7 +11,7 @@ public class Picture {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String filePath;
-    private int fileSize;
+    private Long fileSize;
     private String mediaType;
     private byte[] data;
 
@@ -54,10 +54,10 @@ public class Picture {
     }
 
     public int getFileSize() {
-        return fileSize;
+        return Math.toIntExact(fileSize);
     }
 
-    public void setFileSize(int fileSize) {
+    public void setFileSize(Long fileSize) {
         this.fileSize = fileSize;
     }
 
