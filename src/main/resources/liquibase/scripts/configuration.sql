@@ -1,6 +1,6 @@
 -- liquibase formatted sql
 
--- changeset skaplin:1
+-- changeset avasilieva:1
 
 CREATE TABLE userCat (
     id SERIAL PRIMARY KEY,

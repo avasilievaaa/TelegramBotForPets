@@ -35,7 +35,7 @@ public class PictureController {
      * @return
      * @throws IOException
      */
-    @PostMapping(value = "/{userCatId}/picture", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "{userCatId}/picture", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<String> uploadAvatar(@PathVariable Long chatId, @RequestParam MultipartFile picture, @RequestParam File file) throws IOException {
         pictureService.uploadPicture(chatId, picture.getBytes(), file, false);
         return ResponseEntity.ok().build();
@@ -47,7 +47,7 @@ public class PictureController {
      * @param id
      * @return
      */
-    @GetMapping(value = "/{id}/from-db")
+    @GetMapping(value = "{id}/from-db")
     public ResponseEntity<byte[]> downloadAvatar(@PathVariable Long id) {
         Picture picture = pictureService.findPicture(id);
         HttpHeaders headers = new HttpHeaders();
@@ -56,7 +56,7 @@ public class PictureController {
         return ResponseEntity.status(HttpStatus.OK).headers(headers).body(picture.getData());
     }
 
-    @GetMapping(value = "/{id}/from-file")
+    @GetMapping(value = "{id}/from-file")
     public void downloadAvatar(@PathVariable Long id, HttpServletResponse response) throws IOException {
         Picture picture = pictureService.findPicture(id);
         Path path = Path.of(picture.getFilePath());

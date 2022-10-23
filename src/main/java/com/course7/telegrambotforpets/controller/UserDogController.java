@@ -32,7 +32,7 @@ public class UserDogController {
      * @param id
      * @return
      */
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public UserDog getDogsUserInfo(@PathVariable Long id) {
         return userDogService.findUserDog(id);
     }
@@ -48,7 +48,7 @@ public class UserDogController {
         return userDogService.editUserDog(userDog);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("{id}")
     public void deleteDogsUser(@PathVariable Long id) {
         userDogService.deleteUserDog(id);
     }

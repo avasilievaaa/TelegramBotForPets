@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/user-cat")
+@RequestMapping("user-cat")
 public class UserCatController {
     private final UserCatService userCatService;
 
@@ -32,7 +32,7 @@ public class UserCatController {
      * @param id
      * @return
      */
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public UserCat getCatsUserInfo(@PathVariable Long id) {
         return userCatService.findUserCat(id);
     }
@@ -48,7 +48,7 @@ public class UserCatController {
         return userCatService.editUserCat(userCat);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("{id}")
     public void deleteCatsUser(@PathVariable Long id) {
         userCatService.deleteUserCat(id);
     }
