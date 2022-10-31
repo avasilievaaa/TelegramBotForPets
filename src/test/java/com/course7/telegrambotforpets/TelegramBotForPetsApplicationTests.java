@@ -69,7 +69,7 @@ public class TelegramBotForPetsApplicationTests {
     @Test
     public void saveUserDogTest() throws Exception {
         final String name = "Дружок";
-        final long id = 1;
+        final long id = 2;
         JSONObject userDogObject = new JSONObject();
         userDogObject.put("name", name);
 

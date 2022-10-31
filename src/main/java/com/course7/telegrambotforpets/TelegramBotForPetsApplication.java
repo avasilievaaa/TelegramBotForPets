@@ -12,5 +12,4 @@ public class TelegramBotForPetsApplication {
     public static void main(String[] args) {
         SpringApplication.run(TelegramBotForPetsApplication.class, args);
     }
-
 }

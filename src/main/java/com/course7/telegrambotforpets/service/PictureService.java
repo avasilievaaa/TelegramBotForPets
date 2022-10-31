@@ -54,7 +54,7 @@ public class PictureService {
         Files.deleteIfExists(filePath);
         Picture picture = findPicture(chatId);
         picture.setFilePath(filePath.toString());
-        picture.setFileSize(file.fileSize());
+        picture.setFileSize(Long.valueOf(file.fileSize()));
         picture.setData(pictureFile);
         if (isCat) {
             try {
