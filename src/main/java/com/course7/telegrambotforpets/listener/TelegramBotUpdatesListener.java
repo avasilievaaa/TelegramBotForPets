@@ -97,6 +97,7 @@ public class TelegramBotUpdatesListener extends TelegramLongPollingBot implement
         }
         return UpdatesListener.CONFIRMED_UPDATES_ALL;
     }
+
     /**
      * метод обработки нажатий кнопок меню в зависимости от того, какая кнопка была нажата, вызывается метод сервисов
      */
