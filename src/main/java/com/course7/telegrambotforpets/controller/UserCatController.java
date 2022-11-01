@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("user-cat")
+@RequestMapping("cat-user")
 public class UserCatController {
     private final UserCatService userCatService;
 
